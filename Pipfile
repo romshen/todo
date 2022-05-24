@@ -1,0 +1,28 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+
+[dev-packages]
+# testing
+pytest = "*"
+pytest-env = "*"
+pytest-mock = "*"
+pytest-cov = "*"
+
+# linting
+flake8 = "*"
+
+# formatting
+black = "==21.8b0"
+
+# sorting
+isort = "*"
+
+# pre-commit hooks
+pre-commit = "*"
+
+[requires]
+python_version = "3.9"
