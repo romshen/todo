@@ -4,24 +4,30 @@ verify_ssl = true
 name = "pypi"
 
 [packages]
-fastapi = "*"
 sqlalchemy = "*"
-uvicorn = {extras = ["standard"], version = "*"}
 psycopg2 = "*"
-python-dotenv = "*"
+alembic = {extras = ["tz"], version = "*"}
 
 [dev-packages]
+# local development. We use tiangolo/uvicorn-gunicorn-fastapi image for deployment
+fastapi = "*"
+uvicorn = {extras = ["standard"], version = "*"}
+
 # testing
 pytest = "*"
 pytest-env = "*"
 pytest-mock = "*"
 pytest-cov = "*"
+
 # linting
 flake8 = "*"
+
 # formatting
 black = "==21.8b0"
+
 # sorting
 isort = "*"
+
 # pre-commit hooks
 pre-commit = "*"
 
@@ -29,7 +35,3 @@ pre-commit = "*"
 python_version = "3.9"
 
 [scripts]
-install_db_prerequisites = """bash -c '
-sudo apt install --force-yes libpq-dev
-pg_config --version'
-"""
