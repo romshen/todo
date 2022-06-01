@@ -1,17 +1,12 @@
 # TODO project
-It's a pet project to practice with layered application architecture.
+It's a pet project to practice with:
+- layered application architecture;
+- multistage Dockerfiles;
+- migrations;
+- makefiles.
 
 ## Set up
 1. Clone project repository;
-2. `cd ./todo`
-3. `pipenv run install_db_prerequisites`
-4. `pipenv install`
-5. Up DB: `docker-compose up --build --remove-orphans`
+2. run `cd ./todo; make`
 
-## How to run server:
-`uvicorn api.views:app --reload`
-
-## Down DB and clean up
-`docker-compose down --volumes --remove-orphans`
-
-TODO: add commands to Makefile
+inspection: `docker container exec -it database psql -d todo -U postgres`
