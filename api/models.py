@@ -1,10 +1,12 @@
 from datetime import datetime
 
 from sqlalchemy import Boolean, Column, DateTime, Integer, String
+from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import Session
 
 from api import schemas
-from api.database import Base
+
+Base = declarative_base()
 
 
 class Task(Base):
