@@ -9,4 +9,6 @@ It's a pet project to practice with:
 1. Clone project repository;
 2. run `cd ./todo; make`
 
-inspection: `docker container exec -it database psql -d todo -U postgres`
+inspection: `docker exec -it database psql -d todo -U postgres`
+
+TODO: add a pre-commit hook `pipenv update --dev`
