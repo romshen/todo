@@ -4,8 +4,15 @@ verify_ssl = true
 name = "pypi"
 
 [packages]
+sqlalchemy = "*"
+psycopg2 = "*"
+alembic = {extras = ["tz"], version = "*"}
 
 [dev-packages]
+# local development. We use tiangolo/uvicorn-gunicorn-fastapi image for deployment
+fastapi = "*"
+uvicorn = {extras = ["standard"], version = "*"}
+
 # testing
 pytest = "*"
 pytest-env = "*"
@@ -26,3 +33,5 @@ pre-commit = "*"
 
 [requires]
 python_version = "3.9"
+
+[scripts]
