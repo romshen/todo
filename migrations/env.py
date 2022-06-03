@@ -4,7 +4,7 @@ from alembic import context
 from sqlalchemy import engine_from_config, pool
 
 from api.config import env
-from api.database import Base
+from api.models import Base
 
 # this is the Alembic Config object, which provides
 # access to the values within the .ini file in use.
@@ -12,7 +12,7 @@ config = context.config
 
 config.set_main_option(
     "sqlalchemy.url",
-    f"{env.DB_TYPE}://{env.USER_NAME}:{env.PASSWORD}@{env.HOST}:{env.PORT}/"
+    f"{env.DB_TYPE}://{env.USER_NAME}:{env.PASSWORD}@{env.DB_HOST}:{env.DB_PORT}/"
     f"{env.DB_NAME}",
 )
 # Interpret the config file for Python logging.
